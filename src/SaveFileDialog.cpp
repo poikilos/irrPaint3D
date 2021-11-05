@@ -1,5 +1,8 @@
 #include "SaveFileDialog.h"
 
+// #include <xlocbuf> // provides std::wstring_convert template class
+#include <locale> // provides std::wstring_convert template class
+
 //! constructor
 SaveFileDialog::SaveFileDialog(const wchar_t* title,
     irr::gui::IGUIEnvironment* environment,

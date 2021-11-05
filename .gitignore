@@ -11,3 +11,5 @@ out
 *.files
 *.includes
 irrPaint3d
+/build/
+/err.txt

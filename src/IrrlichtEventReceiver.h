@@ -4,7 +4,7 @@
 
 #include <memory>
 
-#include <irrlicht.h>
+#include <irrlicht/irrlicht.h>
 
 class IrrlichtEventReceiver : public irr::IEventReceiver
 {

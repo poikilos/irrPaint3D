@@ -8,7 +8,7 @@
 #include <sstream>
 #include <string>
 
-#include <irrlicht.h>
+#include <irrlicht/irrlicht.h>
 
 #include "SaveFileDialog.h"
 
@@ -40,7 +40,7 @@ public:
     void endDrawing();
 
     void updateBrushProperties();
-    
+
     void updateModelProperties();
 
     bool isMouseOverGUI();
@@ -68,7 +68,7 @@ private:
     irr::video::IVideoDriver* driver;
     irr::scene::ISceneManager* smgr;
     irr::gui::IGUIEnvironment* guienv;
-    
+
     irr::scene::ICameraSceneNode* camera;
 
     irr::scene::ISceneNode* modelSceneNode;
@@ -79,7 +79,7 @@ private:
 
     irr::video::IImage* selectedTextureImage;
     irr::video::ITexture* selectedTexture;
-    
+
     irr::video::IImage* tempImage;
     irr::video::ITexture* tempTexture;
 

@@ -1,12 +1,11 @@
 #pragma once
 
 #include <codecvt> // for converting wstring to string
-#include <xlocbuf> // for converting wstring to string
 
 #include <memory>
 #include <string>
 
-#include <irrlicht.h>
+#include <irrlicht/irrlicht.h>
 
 const irr::s32 SAVE_FILE_DIALOG_WIDTH = 350;
 const irr::s32 SAVE_FILE_DIALOG_HEIGHT = 250;

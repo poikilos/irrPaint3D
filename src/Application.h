@@ -3,7 +3,7 @@
 #include "ApplicationDelegate.h"
 #include "IrrlichtEventReceiver.h"
 
-#include <irrlicht.h>
+#include <irrlicht/irrlicht.h>
 
 #include <iostream>
 #include <string>
