@@ -1,3 +1,4 @@
 SRC_PATH="$REPO_PATH/src"
 IN_FILES="Application ApplicationDelegate IrrlichtEventReceiver main SaveFileDialog" # Utility
 BIN_NAME=irrpaint3d
+DIST_FILES="media"

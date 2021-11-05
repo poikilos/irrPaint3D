@@ -39,6 +39,10 @@ Settings:
     directory if the file name is the same, so there will be no conflict in that
     case, but the file in the SRC_PATH will be ignored.
 
+    DIST_FILES is a space-separated list of files or directories that should
+    be copied to the build directory along with the binary. This is for
+    required files that should be distributed with the program.
+
 Example build-settings.rc:
 SRC_PATH="$REPO_PATH/src"
 IN_FILES="Application ApplicationDelegate IrrlichtEventReceiver main SaveFileDialog"
@@ -129,7 +133,11 @@ OPTION1="-O2"
 OPTION2=
 OPTION3=
 
-OUT_BIN=build/$BIN_NAME
+if [ -z "$BUILD_DIR" ]; then
+    BUILD_DIR="build"
+fi
+
+OUT_BIN="$BUILD_DIR/$BIN_NAME"
 
 if [ "@$DEBUG" = "@true" ]; then
     OPTION1="-g"
@@ -224,6 +232,31 @@ if [ ! -f "$OUT_BIN" ]; then
     exit 1
 else
     echo "Building $OUT_BIN is complete."
+fi
+
+if [ ! -z "$DIST_FILES" ]; then
+    echo "* copying dist files..."
+    for fn in $DIST_FILES
+    do
+        printf "  * $fn..."
+        if [ -d "$fn" ]; then
+            cp -R "$fn" $BUILD_DIR/
+            if [ $? -ne 0 ]; then
+                echo "Error: 'cp -R \"$fn\" $BUILD_DIR/' failed in \"`pwd`\"."
+                exit 1
+            else
+                echo "OK"
+            fi
+        else
+            cp -f "$fn" $BUILD_DIR/
+            if [ $? -ne 0 ]; then
+                echo "Error: 'cp -f \"$fn\" $BUILD_DIR/' failed in \"`pwd`\"."
+                exit 1
+            else
+                echo "OK"
+            fi
+        fi
+    done
 fi
 
 INSTALLED_BIN="$HOME/.local/bin/$BIN_NAME"
