@@ -39,9 +39,13 @@ Settings:
     directory if the file name is the same, so there will be no conflict in that
     case, but the file in the SRC_PATH will be ignored.
 
-    DIST_FILES is a space-separated list of files or directories that should
+
+    DIST_FILES (optional) is a space-separated list of files or directories that should
     be copied to the build directory along with the binary. This is for
     required files that should be distributed with the program.
+
+    BUILD_DIR (optional, default is "build") is the directory to place the binary
+    executable and DIST_FILES if any.
 
 Example build-settings.rc:
 SRC_PATH="$REPO_PATH/src"
