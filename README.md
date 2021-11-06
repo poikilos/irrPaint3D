@@ -9,6 +9,7 @@ If your model has multiple materials with textures, the ones without textures ar
 
 ![Screenshot](https://raw.githubusercontent.com/shybovycha/irrPaint3D/master/media/screenshot3.png)
 
+
 ## TODO
 
 ### Required
@@ -28,8 +29,17 @@ Things that are not really required but which would greatly improve user experie
 - [ ] Pointing to the selected point on a model with 3D arrow instead of highlighting the whole triangle
 - [x] Updating model texture on the fly
 
+
 ## Compiling and running
 
+### Linux
+1. Install GNU build tools (such as `sudo apt-get build-essential` for Devuan/Debian/Ubuntu).
+2. Install the Irrlicht development package (such as `libirrlicht-dev` on Devuan/Debian/Ubuntu).
+3. Compile the code: `bash build.sh`
+   - If anything is missing, report an issue at [github.com/poikilos/irrPaint3D/issues](https://github.com/poikilos/irrPaint3D/issues) to help improve the documentation and build script.
+4. Run the program: `./build/irrpaint3d`
+
+### Windows
 1. Install [vcpkg](https://github.com/microsoft/vcpkg/):
 2. Use CMake in conjunction with vcpkg to install the dependencies and build the project:
 
@@ -44,8 +54,12 @@ Then just run `irr-paint-3d` binary from the `out` directory.
 .\out\build\x64-Debug\irr-paint-3d.exe
 ```
 
+
+## Instructions
+
 Use UI to open the 3D model. Use `RMB` (Right Mouse Button) to move camera around and `LMB` (Left Mouse Button) to rotate camera.
 To zoom in and out use `RMB + LMB`.
+
 
 ## License
 
